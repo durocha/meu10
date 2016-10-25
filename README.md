@@ -1,2 +1,2 @@
 # meu10
-Catálogo de Camisas Dez ( http://edurocha.org/meu10/ )
+Catálogo virtual dos principais camisas dez do futebol brasileiro.

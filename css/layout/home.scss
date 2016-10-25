@@ -1,0 +1,129 @@
+main.home {
+      @include dimensao(83%, 100%);
+      @include fundo-home-lista;
+      @include padding-padrao();
+      @include flexbox(column, center, space-around);
+      min-width: calc(100% - 8em); // 100% - 160px
+      padding-bottom: 2%;
+
+      header.cabecalho {
+            @include dimensao(100%, 7em); // 140px
+            @include flexbox(row, center, space-between);
+
+            div.logo {
+                  @include image-replacement();
+                  @include dimensao(15.41em, 3.66em); // 308.33px 73.33px
+                  background-size: cover;
+                  background-image: url('../icones/logo.svg');
+            }
+
+            div.descricao-catalogo {
+                  @include flexbox(column, flex-end, space-around);
+                  color: rgba(255,255,255,0.5);
+
+                  p {
+                        font-size: 1.1em; // 22px
+                        text-align: right;
+
+                        &:first-child {
+                              font-weight: bold;
+                        }
+
+                        span {
+                              font-style: italic;
+                        }
+                  }
+            }
+      }
+
+      section.destaques {
+            @include dimensao(100%, 20em); // 400px
+            @include flexbox(row, center, center);
+            background-color: rgba(255,255,255,0.2);
+
+            article {
+                  @include dimensao(33.33%, 100%);
+                  opacity: 0.3;
+            }
+
+            div.imagem-destaque {
+                  height: 70%;
+                  background-size: cover;
+                  background-position: bottom, right;
+            }
+
+            article.voce-decide div.imagem-destaque {
+                  background-image: url(../imagens/voce-decide.jpg);
+            }
+
+            article.camisa-dez div.imagem-destaque {
+                  background-image: url(../imagens/camisa-dez.jpg);
+            }
+
+            article.campeoes div.imagem-destaque {
+                  background-image: url(../imagens/handshake.jpg);
+            }
+
+            div.descricao-destaque {
+                  @include fundo-gradiente-azul();
+                  @include flexbox(column, flex-start, center);
+                  height: 30%;
+                  width: 100%;
+                  position: relative;
+
+                  h1 {
+                        font-size: 1.8em; // 35px
+                        color: white;
+                        font-weight: normal;
+                        text-transform: uppercase;
+                        text-shadow: 0.05em 0.05em 0.11em rgba(0,0,0,0.2); // 2px 2px 4px
+                        margin: 0 auto;
+                        position: static;
+                        opacity: 0.4;
+                  }
+
+                  p {
+                        display: none;
+                  }
+            }
+
+            article.ativo {
+                  opacity: 1;
+                  transform: scale(1.15);
+                  position: relative;
+                  z-index: 1;
+                  box-shadow: 0em 0.4em 0.7em rgba(0,0,0,0.3); // 0px 8px 14px
+                  transition: 0.5s;
+                  cursor: pointer;
+
+                  div.descricao-destaque {
+                        @include fundo-gradiente-azul();
+                        @include flexbox(column, flex-start, center);
+                        height: 30%;
+                        position: relative;
+
+                        h1 {
+                              font-size: 1.8em; // 35px
+                              color: white;
+                              font-weight: normal;
+                              text-transform: uppercase;
+                              text-shadow: 0.05em 0.05em 0.11em rgba(0,0,0,0.2); // 2px 2px 4px
+                              padding-left: 4%;
+                              position: absolute;
+                              top: -40%;
+                              opacity: 1;
+                        }
+
+                        p {
+                              font-size: 0.8em; // 16px
+                              color: white;
+                              font-weight: lighter;
+                              line-height: 1.5;
+                              padding-left: 4%;
+                              text-shadow: 0.06em 0.06em 0.12em rgba(0,0,0,0.2); // 1px 1px 2px
+                              display: block;
+                        }
+                  }
+            }
+      }
+}

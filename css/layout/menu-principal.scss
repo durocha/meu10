@@ -1,0 +1,80 @@
+nav.menu-principal {
+     @include dimensao(12%, 100%);
+     @include fundo-gradiente-menu();
+     @include flexbox(column, center, center);
+     min-width: 8em; // 160px
+
+     position: fixed;
+     right: 0;
+
+     div.menu-acesso {
+          @include dimensao(100%, 9em); // 180px
+          box-sizing: content-box;
+
+          ul {
+               @include dimensao(100%, 100%);
+               @include flexbox(column, center, space-around);
+          }
+
+          li {
+               @include dimensao(3em, 3em); // 60px 60px
+               @include image-replacement();
+               background-size: 85%;
+               background-repeat: no-repeat;
+               background-position: center;
+               display: block;
+
+               &:first-child {
+                     background-image: url('../icones/home.svg');
+               }
+
+               &:last-child {
+                     background-image: url('../icones/list.svg');
+               }
+
+               &:hover {
+                    cursor: pointer;
+                    transform: scale(1.2);
+                    transition: 0.3s ease-in;
+              }
+          }
+
+          &:after {
+                @include fundo-home-lista();
+
+                content: "";
+                display: block;
+                width: 100%;
+                height: 0.5em; // 10px
+                box-shadow: 0em 0.1em 0.3em rgba(0,0,0,0.4); // 0px 2px 6px
+          }
+     }
+
+     div.menu-times {
+          @include flexbox(column, center, center);
+          @include dimensao(100%, 23em); // 460px
+          padding-top: 2em; // 40px
+
+          ul {
+               @include dimensao(60%, 100%);
+               @include flexbox(row, center, space-between);
+               flex-wrap: wrap;
+               max-width: 4.75em; // 95px
+          }
+
+          li {
+              @include dimensao(1.8em, 1.8em); // 36px 36px
+              @include image-replacement();
+              background-size: 85%;
+              background-repeat: no-repeat;
+              background-position: center;
+              display: block;
+
+              &:hover {
+                    cursor: pointer;
+                    transform: scale(1.2);
+                    transition: 0.3s ease-in;
+              }
+          }
+     }
+}
